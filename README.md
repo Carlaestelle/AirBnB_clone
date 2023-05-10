@@ -1,6 +1,6 @@
 AIRBNB CLONE
 
-Description.
+Description:
 AirBnB is a complete web application.
 This is the first part in creating our own AirBnB clone.
 Includes writing a command interpreter to manage our AirBnB project.
