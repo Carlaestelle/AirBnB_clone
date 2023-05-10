@@ -15,3 +15,8 @@ Concepts learnt.
 - What is an UUID
 - How to pass a variable number of keyword and non-keyword arguments to a function
 - How to handle named arguments in a function
+
+Starting the Commandline Interpreter
+The Commandline Interpreter can be started by executing the command ./console.py.
+The console can create, destroy, and update objects.
+Type help within the console to get a list of command options and its function
