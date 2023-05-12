@@ -66,7 +66,8 @@ class HBNBCommand(cmd.Cmd):
     """The class that implements the console
     for the AirBnB clone web application
     """
-    prompt = "(hbnb) "
+    prompt = "(hbnb)"
+    storage = models.storage
 
     def emptyline(self):
         """Command to executed when empty line + <ENTER> key"""
