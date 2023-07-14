@@ -11,7 +11,7 @@ _For this project, we expect you to look at these concepts:_
 </td></tr>
 
 <tr><td>
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230713T102533Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=65ddb84920e46670d1223816325a6413868c45ae90632f5a15227384006531da)
+![logo](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230713T102533Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=65ddb84920e46670d1223816325a6413868c45ae90632f5a15227384006531da)
 
 Background Context
 =
@@ -182,18 +182,25 @@ Tasks
 <table>
 <tr><td>0. README, AUTHORS</td></tr>
 <tr><td>
-- Write a `README.md`:
-.+ description of the project
-.- description of the command interpreter:
-.- how to start it
-.- how to use it
-.- examples
-- You should have an `AUTHORS` file at the root of your repository, listing all individuals having contributed content to the repository. For format, reference [Docker’s AUTHORS page](https://github.com/moby/moby/blob/master/AUTHORS)
-- You should use branches and pull requests on GitHub - it will help you as team to organize your work
+<ul>
+<li> Write a `README.md`:</li>
+    <ul>
+    <li>description of the project</li>
+    <li>description of the command interpreter:</li>
+        <ul>
+        <li>how to start it</li>
+        <li>how to use it</li>
+        <li>examples</li>
+        </ul>
+    </ul>
+<li>You should have an `AUTHORS` file at the root of your repository, listing all individuals having contributed content to the repository. For format, reference [Docker’s AUTHORS page](https://github.com/moby/moby/blob/master/AUTHORS)</li>
+<li>- You should use branches and pull requests on GitHub - it will help you as team to organize your work</li>
+</ul>
 
 ---
 File: `README.md, AUTHORS`|
 </td></tr></table>
+
 <table>
 <tr><td>1. Be pycodestyle compliant!</td></tr>
 <tr><td>
@@ -244,23 +251,37 @@ File: `tests/`
 <tr><td>3. BaseModel</td></tr>
 <tr><td>
 Write a class `BaseModel` that defines all common attributes/methods for other classes:
-- `models/base_model.py`
-- Public instance attributes:
-.- id: string - assign with an uuid when an instance is created:
-you can use uuid.uuid4() to generate unique id but don’t forget to convert to a string
-the goal is to have unique id for each BaseModel
-created_at: datetime - assign with the current datetime when an instance is created
-updated_at: datetime - assign with the current datetime when an instance is created and it will be updated every time you change your object
-__str__: should print: [<class name>] (<self.id>) <self.__dict__>
-Public instance methods:
-save(self): updates the public instance attribute updated_at with the current datetime
-to_dict(self): returns a dictionary containing all keys/values of __dict__ of the instance:
-by using self.__dict__, only instance attributes set will be returned
-a key __class__ must be added to this dictionary with the class name of the object
-created_at and updated_at must be converted to string object in ISO format:
-format: %Y-%m-%dT%H:%M:%S.%f (ex: 2017-06-14T22:31:03.285259)
-you can use isoformat() of datetime object
-This method will be the first piece of the serialization/deserialization process: create a dictionary representation with “simple object type” of our BaseModel
+<ul>
+<li>`models/base_model.py`</li>
+<li>Public instance attributes:</li>
+    <ul>
+    <li>`id`: string - assign with an `uuid` when an instance is created:</li>
+        <ul>
+        <li>you can use `uuid.uuid4()` to generate unique `id` but don’t forget to convert to a string</li>
+        <li>the goal is to have unique `id` for each `BaseModel`
+        </ul>
+    <li>`created_at`: datetime - assign with the current datetime when an instance is created</li>
+    <li>`updated_at`: datetime - assign with the current datetime when an instance is created and it will be updated every time you change your object</li>
+    </ul>
+<li>`__str__`: should print: `[<class name>] (<self.id>) <self.__dict__>`</li>
+<li>Public instance methods:</li>
+    <ul>
+    <li>`save(self)`: updates the public instance attribute `updated_at` with the current datetime</li>
+    <li>`to_dict(self)`: returns a dictionary containing all keys/values of `__dict__` of the instance:</li>
+        <ul>
+        <li>by using `self.__dict__`, only instance attributes set will be returned</li>
+        <li>a key `__class__` must be added to this dictionary with the class name of the object</li>
+        <li> `created_at` and `updated_at` must be converted to string object in ISO format:</li>
+            <ul>
+            <li>format: `%Y-%m-%dT%H:%M:%S.%f (ex: 2017-06-14T22:31:03.285259`)</li>
+            <li>you can use `isoformat()` of `datetime` object</li>
+            </ul>
+        <li>This method will be the first piece of the serialization/deserialization process: create a dictionary representation with “simple object type” of our `BaseModel`</li>
+        </ul>
+    </ul>
+</ul>
+
+```
 guillaume@ubuntu:~/AirBnB$ cat test_base_model.py
 #!/usr/bin/python3
 from models.base_model import BaseModel
@@ -290,31 +311,40 @@ JSON of my_model:
     created_at: (<class 'str'>) - 2017-09-28T21:05:54.119427
 
 guillaume@ubuntu:~/AirBnB$ 
-Repo:
+```
 
-GitHub repository: AirBnB_clone
-File: models/base_model.py, models/__init__.py, tests/
-     
-4. Create BaseModel from dictionary
-mandatory
-Score: 0.0% (Checks completed: 0.0%)
-Previously we created a method to generate a dictionary representation of an instance (method to_dict()).
+---
+File: `models/base_model.py, models/__init__.py, tests/`
+</td></tr></table>
+
+<table>
+<tr><td>4. Create BaseModel from dictionary</td></tr>
+<tr><td>
+Previously we created a method to generate a dictionary representation of an instance (method `to_dict()`).
 
 Now it’s time to re-create an instance with this dictionary representation.
 
-<class 'BaseModel'> -> to_dict() -> <class 'dict'> -> <class 'BaseModel'>
-Update models/base_model.py:
-
-__init__(self, *args, **kwargs):
-you will use *args, **kwargs arguments for the constructor of a BaseModel. (more information inside the AirBnB clone concept page)
-*args won’t be used
-if kwargs is not empty:
-each key of this dictionary is an attribute name (Note __class__ from kwargs is the only one that should not be added as an attribute. See the example output, below)
-each value of this dictionary is the value of this attribute name
-Warning: created_at and updated_at are strings in this dictionary, but inside your BaseModel instance is working with datetime object. You have to convert these strings into datetime object. Tip: you know the string format of these datetime
-otherwise:
-create id and created_at as you did previously (new instance)
-guillaume@ubuntu:~/AirBnB$ cat test_base_model_dict.py
+`<class 'BaseModel'> -> to_dict() -> <class 'dict'> -> <class 'BaseModel'>`
+Update `models/base_model.py`:
+<ul>
+<li>`__init__(self, *args, **kwargs)`:</li>
+    <ul>
+    <li>you will use `*args, **kwargs` arguments for the constructor of a `BaseModel`. (more information inside the __AirBnB clone__ concept page)</li>
+    <li>`*args` won’t be used</li>
+    <li>if `kwargs` is not empty:</li>
+        <ul>
+        <li>each key of this dictionary is an attribute name (Note `__class__` from `kwargs` is the only one that should not be added as an attribute. See the example output, below)</li>
+        <li>each value of this dictionary is the value of this attribute name</li>
+        <li>__Warning__: `created_at` and `updated_at` are strings in this dictionary, but inside your `BaseModel` instance is working with `datetime` object. You have to convert these strings into `datetime` object. Tip: you know the string format of these datetime</li>
+        </ul>
+    <li>otherwise:</li>
+        <ul>
+        <li>create `id` and `created_at` as you did previously (new instance)</li>
+        </ul>
+    </ul>
+</ul>
+```
+guillame@ubuntu:~/AirBnB$ cat test_model_dict.py
 #!/usr/bin/python3
 from models.base_model import BaseModel
 
@@ -360,58 +390,75 @@ JSON of my_model:
 --
 False
 guillaume@ubuntu:~/AirBnB$ 
-Repo:
+```
 
-GitHub repository: AirBnB_clone
-File: models/base_model.py, tests/
-     
-5. Store first object
-mandatory
-Score: 63.33% (Checks completed: 63.33%)
-Now we can recreate a BaseModel from another one by using a dictionary representation:
+---
+File: `models/base_model.py, tests/`
+</td></tr></table>
 
-<class 'BaseModel'> -> to_dict() -> <class 'dict'> -> <class 'BaseModel'>
+<table>
+<tr><td>5. Store first object</td></tr>
+<tr><td>
+
+Now we can recreate a `BaseModel` from another one by using a dictionary representation:
+
+`<class 'BaseModel'> -> to_dict() -> <class 'dict'> -> <class 'BaseModel'>`
 It’s great but it’s still not persistent: every time you launch the program, you don’t restore all objects created before… The first way you will see here is to save these objects to a file.
 
 Writing the dictionary representation to a file won’t be relevant:
 
-Python doesn’t know how to convert a string to a dictionary (easily)
-It’s not human readable
-Using this file with another program in Python or other language will be hard.
+- Python doesn’t know how to convert a string to a dictionary (easily)
+- It’s not human readable
+- Using this file with another program in Python or other language will be hard.
 So, you will convert the dictionary representation to a JSON string. JSON is a standard representation of a data structure. With this format, humans can read and all programming languages have a JSON reader and writer.
 
 Now the flow of serialization-deserialization will be:
 
-<class 'BaseModel'> -> to_dict() -> <class 'dict'> -> JSON dump -> <class 'str'> -> FILE -> <class 'str'> -> JSON load -> <class 'dict'> -> <class 'BaseModel'>
+`<class 'BaseModel'> -> to_dict() -> <class 'dict'> -> JSON dump -> <class 'str'> -> FILE -> <class 'str'> -> JSON load -> <class 'dict'> -> <class 'BaseModel'>`
 Magic right?
 
 Terms:
 
-simple Python data structure: Dictionaries, arrays, number and string. ex: { '12': { 'numbers': [1, 2, 3], 'name': "John" } }
-JSON string representation: String representing a simple data structure in JSON format. ex: '{ "12": { "numbers": [1, 2, 3], "name": "John" } }'
-Write a class FileStorage that serializes instances to a JSON file and deserializes JSON file to instances:
+- __simple Python data structure__: Dictionaries, arrays, number and string. ex: `{ '12': { 'numbers': [1, 2, 3], 'name': "John" } }`
+- __JSON string representation__: String representing a simple data structure in JSON format. ex:`'{ "12": { "numbers": [1, 2, 3], "name": "John" } }'`
+Write a class `FileStorage` that serializes instances to a JSON file and deserializes JSON file to instances:
 
-models/engine/file_storage.py
-Private class attributes:
-__file_path: string - path to the JSON file (ex: file.json)
-__objects: dictionary - empty but will store all objects by <class name>.id (ex: to store a BaseModel object with id=12121212, the key will be BaseModel.12121212)
-Public instance methods:
-all(self): returns the dictionary __objects
-new(self, obj): sets in __objects the obj with key <obj class name>.id
-save(self): serializes __objects to the JSON file (path: __file_path)
-reload(self): deserializes the JSON file to __objects (only if the JSON file (__file_path) exists ; otherwise, do nothing. If the file doesn’t exist, no exception should be raised)
-Update models/__init__.py: to create a unique FileStorage instance for your application
+<ul>
+<li>`models/engine/file_storage.py`</li>
+<li>Private class attributes:
+    <ul>
+    <li>`__file_path`: string - path to the JSON file (ex: `file.json`)</li>
+    <li>`__objects`: dictionary - empty but will store all objects by `<class name>.id` (ex: to store a `BaseModel` object with `id=12121212`, the key will be `BaseModel.12121212`)</li>
+    </ul>
+<li>Public instance methods:</li>
+    <ul>
+    <li>`all(self)`: returns the dictionary `__objects`
+    <li>`new(self, obj)`: sets in `__objects` the `obj` with key `<obj class name>.id`</li>
+    <li>`save(self)`: serializes `__objects` to the JSON file (path: `__file_path`)</li>
+    <li>`reload(self)`: deserializes the JSON file to `__objects` (only if the JSON file (`__file_path`) exists ; otherwise, do nothing. If the file doesn’t exist, no exception should be raised)</li>
+    </ul>
+</ul>
 
-import file_storage.py
-create the variable storage, an instance of FileStorage
-call reload() method on this variable
-Update models/base_model.py: to link your BaseModel to FileStorage by using the variable storage
+Update `models/__init__.py`: to create a unique `FileStorage` instance for your application
 
-import the variable storage
-in the method save(self):
-call save(self) method of storage
-__init__(self, *args, **kwargs):
-if it’s a new instance (not from a dictionary representation), add a call to the method new(self) on storage
+- import file_storage.py
+- create the variable storage, an instance of FileStorage
+- call reload() method on this variable
+
+Update `models/base_model.py`: to link your `BaseModel` to `FileStorage` by using the variable `storage`
+
+<ul>
+<li>import the variable `storage`</li>
+<li>in the method `save(self)`:</li>
+    <ul>
+    <li>call `save(self)` method of `storage`</li>
+    </ul>
+<li>`__init__(self, *args, **kwargs)`:</li>
+    <ul>
+    <li>if it’s a new instance (not from a dictionary representation), add a call to the method `new(self)` on `storage`</li>
+    </ul>
+</ul>
+```
 guillaume@ubuntu:~/AirBnB$ cat test_save_reload_base_model.py
 #!/usr/bin/python3
 from models import storage
@@ -457,32 +504,40 @@ guillaume@ubuntu:~/AirBnB$
 guillaume@ubuntu:~/AirBnB$ cat file.json ; echo ""
 {"BaseModel.e79e744a-55d4-45a3-b74a-ca5fae74e0e2": {"__class__": "BaseModel", "id": "e79e744a-55d4-45a3-b74a-ca5fae74e0e2", "updated_at": "2017-09-28T21:08:06.151750", "created_at": "2017-09-28T21:08:06.151711", "name": "My_First_Model", "my_number": 89}, "BaseModel.080cce84-c574-4230-b82a-9acb74ad5e8c": {"__class__": "BaseModel", "id": "080cce84-c574-4230-b82a-9acb74ad5e8c", "updated_at": "2017-09-28T21:07:51.973308", "created_at": "2017-09-28T21:07:51.973301", "name": "My_First_Model", "my_number": 89}, "BaseModel.ee49c413-023a-4b49-bd28-f2936c95460d": {"__class__": "BaseModel", "id": "ee49c413-023a-4b49-bd28-f2936c95460d", "updated_at": "2017-09-28T21:07:25.047381", "created_at": "2017-09-28T21:07:25.047372", "name": "My_First_Model", "my_number": 89}}
 guillaume@ubuntu:~/AirBnB$ 
-Repo:
+```
 
-GitHub repository: AirBnB_clone
-File: models/engine/file_storage.py, models/engine/__init__.py, models/__init__.py, models/base_model.py, tests/
-     
-6. Console 0.0.1
-mandatory
-Score: 100.0% (Checks completed: 100.0%)
-Write a program called console.py that contains the entry point of the command interpreter:
+---
+File: `models/engine/file_storage.py, models/engine/__init__.py, models/__init__.py, models/base_model.py, tests/`
+</td></tr></table>
 
-You must use the module cmd
-Your class definition must be: class HBNBCommand(cmd.Cmd):
-Your command interpreter should implement:
-quit and EOF to exit the program
-help (this action is provided by default by cmd but you should keep it updated and documented as you work through tasks)
-a custom prompt: (hbnb)
-an empty line + ENTER shouldn’t execute anything
-Your code should not be executed when imported
-Warning:
+<table>
+<tr><td>6. Console 0.0.1</td></tr>
+<tr><td>
+
+Write a program called `console.py` that contains the entry point of the command interpreter:
+
+<ul>
+<li>You must use the module `cmd`</li>
+<li>Your class definition must be: `class HBNBCommand(cmd.Cmd):`</li>
+<li>Your command interpreter should implement:</li>
+    <ul>
+    <li>`quit` and `EOF` to exit the program
+    <li>`help` (this action is provided by default by `cmd` but you should keep it updated and documented as you work through tasks)</li>
+    <li>a custom prompt: `(hbnb)`</li>
+    <li>an empty line + `ENTER` shouldn’t execute anything</li>
+    </ul>
+<li>Your code should not be executed when imported</li>
+
+__Warning:__
 
 You should end your file with:
-
+```
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
+```
 to make your program executable except when imported. Please don’t add anything around - the Checker won’t like it otherwise
 
+```
 guillaume@ubuntu:~/AirBnB$ ./console.py
 (hbnb) help
 
@@ -498,54 +553,69 @@ Quit command to exit the program
 (hbnb) 
 (hbnb) quit 
 guillaume@ubuntu:~/AirBnB$ 
-No unittests needed
+```
+__No unittests needed__
 
-Repo:
+---
+File: `console.py`
+</td></tr></table>
 
-GitHub repository: AirBnB_clone
-File: console.py
-    
-7. Console 0.1
-mandatory
-Score: 5.71% (Checks completed: 5.71%)
-Update your command interpreter (console.py) to have these commands:
+<table>
+<tr><td>7. Console 0.1</td></tr>
+<tr><td>
 
-create: Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id. Ex: $ create BaseModel
-If the class name is missing, print ** class name missing ** (ex: $ create)
-If the class name doesn’t exist, print ** class doesn't exist ** (ex: $ create MyModel)
-show: Prints the string representation of an instance based on the class name and id. Ex: $ show BaseModel 1234-1234-1234.
-If the class name is missing, print ** class name missing ** (ex: $ show)
-If the class name doesn’t exist, print ** class doesn't exist ** (ex: $ show MyModel)
-If the id is missing, print ** instance id missing ** (ex: $ show BaseModel)
-If the instance of the class name doesn’t exist for the id, print ** no instance found ** (ex: $ show BaseModel 121212)
-destroy: Deletes an instance based on the class name and id (save the change into the JSON file). Ex: $ destroy BaseModel 1234-1234-1234.
-If the class name is missing, print ** class name missing ** (ex: $ destroy)
-If the class name doesn’t exist, print ** class doesn't exist ** (ex:$ destroy MyModel)
-If the id is missing, print ** instance id missing ** (ex: $ destroy BaseModel)
-If the instance of the class name doesn’t exist for the id, print ** no instance found ** (ex: $ destroy BaseModel 121212)
-all: Prints all string representation of all instances based or not on the class name. Ex: $ all BaseModel or $ all.
-The printed result must be a list of strings (like the example below)
-If the class name doesn’t exist, print ** class doesn't exist ** (ex: $ all MyModel)
-update: Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file). Ex: $ update BaseModel 1234-1234-1234 email "aibnb@mail.com".
-Usage: update <class name> <id> <attribute name> "<attribute value>"
-Only one attribute can be updated at the time
-You can assume the attribute name is valid (exists for this model)
-The attribute value must be casted to the attribute type
-If the class name is missing, print ** class name missing ** (ex: $ update)
-If the class name doesn’t exist, print ** class doesn't exist ** (ex: $ update MyModel)
-If the id is missing, print ** instance id missing ** (ex: $ update BaseModel)
-If the instance of the class name doesn’t exist for the id, print ** no instance found ** (ex: $ update BaseModel 121212)
-If the attribute name is missing, print ** attribute name missing ** (ex: $ update BaseModel existing-id)
-If the value for the attribute name doesn’t exist, print ** value missing ** (ex: $ update BaseModel existing-id first_name)
-All other arguments should not be used (Ex: $ update BaseModel 1234-1234-1234 email "aibnb@mail.com" first_name "Betty" = $ update BaseModel 1234-1234-1234 email "aibnb@mail.com")
-id, created_at and updated_at cant’ be updated. You can assume they won’t be passed in the update command
-Only “simple” arguments can be updated: string, integer and float. You can assume nobody will try to update list of ids or datetime
+Update your command interpreter (`console.py)` to have these commands:
+
+<ul>
+<li>`create`: Creates a new instance of `BaseModel`, saves it (to the JSON file) and prints the `id`. Ex: `$ create BaseModel`</li>
+    <ul>
+    <li>If the class name is missing, print `** class name missing **` (ex: `$ create`)</li>
+    <li>If the class name doesn’t exist, print `** class doesn't exist **` (ex: `$ create MyModel`)</li>
+    </ul>
+<li>`show`: Prints the string representation of an instance based on the class name and `id`. Ex: `$ show BaseModel 1234-1234-1234`.</li>
+    <ul>
+    <li>If the class name is missing, print `** class name missing **` (ex: `$ show`)</li>
+    <li>If the class name doesn’t exist, print `** class doesn't exist **` (ex: `$ show MyModel`)</li>
+    <li>If the `id` is missing, print `** instance id missing **` (ex: `$ show BaseModel`)</li>
+    </li>If the instance of the class name doesn’t exist for the `id`, print `** no instance found **` (ex: `$ show BaseModel 121212`)</li>
+    </ul>
+<li>`destroy`: Deletes an instance based on the class name and `id` (save the change into the JSON file). Ex: `$ destroy BaseModel 1234-1234-1234`.</li>
+    <ul>
+    <li>If the class name is missing, print `** class name missing **` (ex: `$ destroy`)</li>
+    <li>If the class name doesn’t exist, print `** class doesn't exist **` (ex: `$ destroy MyModel`)</li>
+    <li>If the id is missing, print `** instance id missing **` (ex: `$ destroy BaseModel`)</li>
+    <li>If the instance of the class name doesn’t exist for the id, print `** no instance found **` (ex: `$ destroy BaseModel 121212`)</li>
+    </ul>
+<li>`all`: Prints all string representation of all instances based or not on the class name. Ex: `$ all BaseModel` or `$ all`.</li>
+    <ul>
+    <li>The printed result must be a list of strings (like the example below)</li>
+    <li>If the class name doesn’t exist, print `** class doesn't exist **` (ex: `$ all MyModel`)
+    </ul>
+<li>`update`: Updates an instance based on the class name and `id` by adding or updating attribute (save the change into the JSON file). Ex: `$ update BaseModel 1234-1234-1234 email "aibnb@mail.com"`.</li>
+    <ul>
+    <li>Usage: `update <class name> <id> <attribute name> "<attribute value>"`</li>
+    <li>Only one attribute can be updated at the time</li>
+    <li>You can assume the attribute name is valid (exists for this model)</li>
+    <li>The attribute value must be casted to the attribute type</li>
+    <li>If the class name is missing, print `** class name missing **` (ex: `$ update`)</li>
+    <li>If the class name doesn’t exist, print `** class doesn't exist **` (ex: `$ update MyModel`)</li>
+    <li>If the `id` is missing, print `** instance id missing **` (ex: `$ update BaseModel`)</li>
+    <li>If the instance of the class name doesn’t exist for the `id`, print `** no instance found **` (ex: `$ update BaseModel 121212`)</li>
+    <li>If the attribute name is missing, print `** attribute name missing **` (ex: `$ update BaseModel existing-id`)</li>
+    <li>If the value for the attribute name doesn’t exist, print `** value missing **` (ex: `$ update BaseModel existing-id first_name`)</li>
+    <li>All other arguments should not be used (Ex: `$ update BaseModel 1234-1234-1234 email "aibnb@mail.com" first_name "Betty" = $ update BaseModel 1234-1234-1234 email "aibnb@mail.com"`)</li>
+    <li>`id`, `created_at` and `updated_at` cant’ be updated. You can assume they won’t be passed in the `update` command</li>
+    <li>Only “simple” arguments can be updated: string, integer and float. You can assume nobody will try to update list of ids or datetime</li>
+    </ul>
+</ul>
+
 Let’s add some rules:
 
-You can assume arguments are always in the right order
-Each arguments are separated by a space
-A string argument with a space must be between double quote
-The error management starts from the first argument to the last one
+- You can assume arguments are always in the right order
+- Each arguments are separated by a space
+- A string argument with a space must be between double quote
+- The error management starts from the first argument to the last one
+```
 guillaume@ubuntu:~/AirBnB$ ./console.py
 (hbnb) all MyModel
 ** class doesn't exist **
@@ -572,28 +642,36 @@ guillaume@ubuntu:~/AirBnB$ ./console.py
 (hbnb) show BaseModel 49faff9a-6318-451f-87b6-910505c55907
 ** no instance found **
 (hbnb) 
-No unittests needed
+```
+__No unittests needed__
 
-Repo:
+---
 
-GitHub repository: AirBnB_clone
-File: console.py
-     
-8. First User
-mandatory
-Score: 43.24% (Checks completed: 43.24%)
-Write a class User that inherits from BaseModel:
+File: `console.py`
+</td></tr></table>
 
-models/user.py
-Public class attributes:
-email: string - empty string
-password: string - empty string
-first_name: string - empty string
-last_name: string - empty string
-Update FileStorage to manage correctly serialization and deserialization of User.
+<table>
+<tr><td>8. First User</td></tr>
+<tr><td>
 
-Update your command interpreter (console.py) to allow show, create, destroy, update and all used with User.
+Write a class `User` that inherits from `BaseModel`:
 
+<ul>
+<li>`models/user.py`</li>
+<li>Public class attributes:</li>
+    <ul>
+    <li>`email`: string - empty string</li>
+    <li>`password`: string - empty string</li>
+    <li>`first_name`: string - empty string</li>
+    <li>`last_name`: string - empty string</li>
+    </ul>
+</ul>
+
+Update `FileStorage` to manage correctly serialization and deserialization of `User`.
+
+Update your command interpreter (`console.py`) to allow `show`, `create`, `destroy`, `update` and `all` used with `User`.
+
+```
 guillaume@ubuntu:~/AirBnB$ cat test_save_reload_user.py
 #!/usr/bin/python3
 from models import storage
@@ -658,17 +736,17 @@ guillaume@ubuntu:~/AirBnB$
 guillaume@ubuntu:~/AirBnB$ cat file.json ; echo ""
 {"BaseModel.af9b4cbd-2ce1-4e6e-8259-f578097dd15f": {"updated_at": "2017-09-28T21:11:12.971544", "__class__": "BaseModel", "id": "af9b4cbd-2ce1-4e6e-8259-f578097dd15f", "created_at": "2017-09-28T21:11:12.971521"}, "User.38f22813-2753-4d42-b37c-57a17f1e4f88": {"password": "63a9f0ea7bb98050796b649e85481845", "created_at": "2017-09-28T21:11:42.848279", "email": "airbnb@mail.com", "id": "38f22813-2753-4d42-b37c-57a17f1e4f88", "last_name": "Bar", "updated_at": "2017-09-28T21:11:42.848291", "first_name": "Betty", "__class__": "User"}, "User.d0ef8146-4664-4de5-8e89-096d667b728e": {"password": "63a9f0ea7bb98050796b649e85481845", "created_at": "2017-09-28T21:11:42.848280", "email": "airbnb_2@mail.com", "id": "d0ef8146-4664-4de5-8e89-096d667b728e", "updated_at": "2017-09-28T21:11:42.848294", "first_name": "John", "__class__": "User"}, "BaseModel.9bf17966-b092-4996-bd33-26a5353cccb4": {"updated_at": "2017-09-28T21:11:14.963058", "__class__": "BaseModel", "id": "9bf17966-b092-4996-bd33-26a5353cccb4", "created_at": "2017-09-28T21:11:14.963049"}, "BaseModel.a42ee380-c959-450e-ad29-c840a898cfce": {"updated_at": "2017-09-28T21:11:15.504296", "__class__": "BaseModel", "id": "a42ee380-c959-450e-ad29-c840a898cfce", "created_at": "2017-09-28T21:11:15.504287"}, "BaseModel.38a22b25-ae9c-4fa9-9f94-59b3eb51bfba": {"updated_at": "2017-09-28T21:11:13.753347", "__class__": "BaseModel", "id": "38a22b25-ae9c-4fa9-9f94-59b3eb51bfba", "created_at": "2017-09-28T21:11:13.753337"}, "BaseModel.2bf3ebfd-a220-49ee-9ae6-b01c75f6f6a4": {"updated_at": "2017-09-28T21:11:14.333862", "__class__": "BaseModel", "id": "2bf3ebfd-a220-49ee-9ae6-b01c75f6f6a4", "created_at": "2017-09-28T21:11:14.333852"}, "User.246c227a-d5c1-403d-9bc7-6a47bb9f0f68": {"password": "root", "created_at": "2017-09-28T21:12:19.611352", "email": "airbnb@mail.com", "id": "246c227a-d5c1-403d-9bc7-6a47bb9f0f68", "last_name": "Bar", "updated_at": "2017-09-28T21:12:19.611363", "first_name": "Betty", "__class__": "User"}, "User.fce12f8a-fdb6-439a-afe8-2881754de71c": {"password": "root", "created_at": "2017-09-28T21:12:19.611354", "email": "airbnb_2@mail.com", "id": "fce12f8a-fdb6-439a-afe8-2881754de71c", "updated_at": "2017-09-28T21:12:19.611368", "first_name": "John", "__class__": "User"}}
 guillaume@ubuntu:~/AirBnB$ 
-No unittests needed for the console
+```
+__No unittests needed for the console__
 
-Repo:
+---
+File: `models/user.py, models/engine/file_storage.py, console.py, tests/`
+</td></tr></table>
 
-GitHub repository: AirBnB_clone
-File: models/user.py, models/engine/file_storage.py, console.py, tests/
-     
-9. More classes!
-mandatory
-Score: 42.86% (Checks completed: 42.86%)
-Write all those classes that inherit from BaseModel:
+<table>
+<tr><td>9. More classes!</td></tr>
+<tr><td>
+Write all those classes that inherit from `BaseModel`:
 
 State (models/state.py):
 Public class attributes:
