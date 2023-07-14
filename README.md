@@ -182,23 +182,18 @@ Tasks
 <table>
 <tr><td>0. README, AUTHORS</td></tr>
 <tr><td>
-<ul>
-<li> Write a `README.md`:</li>
-    <ul>
-    <li>description of the project</li>
-    <li>description of the command interpreter:</li>
-        <ul>
-        <li>how to start it</li>
-        <li>how to use it</li>
-        <li>examples</li>
-        </ul>
-    </ul>
-<li>You should have an `AUTHORS` file at the root of your repository, listing all individuals having contributed content to the repository. For format, reference [Docker’s AUTHORS page](https://github.com/moby/moby/blob/master/AUTHORS)</li>
-<li>- You should use branches and pull requests on GitHub - it will help you as team to organize your work</li>
-</ul>
+
+- Write a `README.md`:
+> - description of the project
+> - description of the command interpreter:
+>> - how to start it
+>> - how to use it
+>> - examples
+- You should have an `AUTHORS` file at the root of your repository, listing all individuals having contributed content to the repository. For format, reference [Docker’s AUTHORS page](https://github.com/moby/moby/blob/master/AUTHORS)
+- You should use branches and pull requests on GitHub - it will help you as team to organize your work
 
 ---
-File: `README.md, AUTHORS`|
+File: `README.md, AUTHORS`
 </td></tr></table>
 
 <table>
