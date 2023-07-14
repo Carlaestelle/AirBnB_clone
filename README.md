@@ -8,7 +8,9 @@ _For this project, we expect you to look at these concepts:_
 
 - [Python packages](https://intranet.alxswe.com/concepts/66)
 - [AirBnB clone](https://intranet.alxswe.com/concepts/74)
+</td></tr>
 
+<tr><td>
 ![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230713T102533Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=65ddb84920e46670d1223816325a6413868c45ae90632f5a15227384006531da)
 
 Background Context
@@ -162,6 +164,7 @@ $
 All tests should also pass in non-interactive mode: `$ echo "python3 -m unittest discover tests" | bash`
 
 ![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230713T102533Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=e97ff54985162b6d4a7715da700f08091017dafece6375a776ff2dd720ed76c2)
+</td></tr>
 
 Video library(8 total)
 -
@@ -176,35 +179,35 @@ Video library(8 total)
 
 Tasks
 =
-|0. README, AUTHORS|
-|:------------------------------------------------------------------------------------------:|
-|- Write a `README.md`:
- - description of the project
- - description of the command interpreter:
-  - how to start it
-  - how to use it
-  - examples
+<table>
+<tr><td>0. README, AUTHORS</td></tr>
+<tr><td>
+- Write a `README.md`:
+.+ description of the project
+.- description of the command interpreter:
+.- how to start it
+.- how to use it
+.- examples
 - You should have an `AUTHORS` file at the root of your repository, listing all individuals having contributed content to the repository. For format, reference [Docker’s AUTHORS page](https://github.com/moby/moby/blob/master/AUTHORS)
 - You should use branches and pull requests on GitHub - it will help you as team to organize your work
 
 ---
 File: `README.md, AUTHORS`|
-
-  
-1. Be pycodestyle compliant!
-mandatory
-Score: 100.0% (Checks completed: 100.0%)
+</td></tr></table>
+<table>
+<tr><td>1. Be pycodestyle compliant!</td></tr>
+<tr><td>
 Write beautiful code that passes the pycodestyle checks.
 
-Repo:
+GitHub repository: `AirBnB_clone`
+</td></tr></table>
 
-GitHub repository: AirBnB_clone
-    
-2. Unittests
-mandatory
-Score: 19.23% (Checks completed: 19.23%)
+<table>
+<tr><td>2. Unittests</td></tr>
+<tr><td>
 All your files, classes, functions must be tested with unit tests
 
+```
 guillaume@ubuntu:~/AirBnB$ python3 -m unittest discover tests
 ...................................................................................
 ...................................................................................
@@ -214,12 +217,14 @@ Ran 189 tests in 13.135s
 
 OK
 guillaume@ubuntu:~/AirBnB$
-Note that this is just an example, the number of tests you create can be different from the above example.
+```
+_Note that this is just an example, the number of tests you create can be different from the above example._
 
-Warning:
+__Warning:__
 
 Unit tests must also pass in non-interactive mode:
 
+```
 guillaume@ubuntu:~/AirBnB$ echo "python3 -m unittest discover tests" | bash
 ...................................................................................
 ...................................................................................
@@ -229,19 +234,19 @@ Ran 189 tests in 13.135s
 
 OK
 guillaume@ubuntu:~/AirBnB$
-Repo:
+```
 
-GitHub repository: AirBnB_clone
-File: tests/
-     
-3. BaseModel
-mandatory
-Score: 19.23% (Checks completed: 19.23%)
-Write a class BaseModel that defines all common attributes/methods for other classes:
+---
+File: `tests/`
+</td></tr></table>
 
-models/base_model.py
-Public instance attributes:
-id: string - assign with an uuid when an instance is created:
+<table>
+<tr><td>3. BaseModel</td></tr>
+<tr><td>
+Write a class `BaseModel` that defines all common attributes/methods for other classes:
+- `models/base_model.py`
+- Public instance attributes:
+.- id: string - assign with an uuid when an instance is created:
 you can use uuid.uuid4() to generate unique id but don’t forget to convert to a string
 the goal is to have unique id for each BaseModel
 created_at: datetime - assign with the current datetime when an instance is created
