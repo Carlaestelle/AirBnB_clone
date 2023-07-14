@@ -163,34 +163,33 @@ All tests should also pass in non-interactive mode: `$ echo "python3 -m unittest
 
 ![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230713T102533Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=e97ff54985162b6d4a7715da700f08091017dafece6375a776ff2dd720ed76c2)
 
-
-
 Video library(8 total)
-Search by title
-HBNB project overview
-HBNB - the console
-Python: Unique Identifier
-Python: Unittests
-Python: BaseModel and inheritance
-Code consistency
-Python: Modules and Packages
-HBNB - storage abstraction
-Tasks
-0. README, AUTHORS
-mandatory
-Score: 100.0% (Checks completed: 100.0%)
-Write a README.md:
-description of the project
-description of the command interpreter:
-how to start it
-how to use it
-examples
-You should have an AUTHORS file at the root of your repository, listing all individuals having contributed content to the repository. For format, reference Docker’s AUTHORS page
-You should use branches and pull requests on GitHub - it will help you as team to organize your work
-Repo:
+-
+- HBNB project overview
+- HBNB - the console
+- Python: Unique Identifier
+- Python: Unittests
+- Python: BaseModel and inheritance
+- Code consistency
+- Python: Modules and Packages
+- HBNB - storage abstraction
 
-GitHub repository: AirBnB_clone
-File: README.md, AUTHORS
+Tasks
+=
+|0. README, AUTHORS|
+|:------------------------------------------------------------------------------------------:|
+|- Write a `README.md`:
+ - description of the project
+ - description of the command interpreter:
+  - how to start it
+  - how to use it
+  - examples
+- You should have an `AUTHORS` file at the root of your repository, listing all individuals having contributed content to the repository. For format, reference [Docker’s AUTHORS page](https://github.com/moby/moby/blob/master/AUTHORS)
+- You should use branches and pull requests on GitHub - it will help you as team to organize your work
+
+---
+File: `README.md, AUTHORS`|
+
   
 1. Be pycodestyle compliant!
 mandatory
